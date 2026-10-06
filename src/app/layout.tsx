@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next"; // Add Viewport
 import type { ReactNode } from "react";
 import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
@@ -22,6 +22,13 @@ const manrope = Manrope({
   style: ["normal"],
   display: "swap",
 });
+
+// ADD THIS BLOCK
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ironwood.net.au"),
@@ -60,7 +67,6 @@ export default function RootLayout({
     >
       <body id="top" className="min-h-full bg-cream text-ink">
         <Preloader />
-        {/* <CustomCursor />  <-- REMOVED */}
         <PageTransition />
         <Navbar />
         <main>{children}</main>

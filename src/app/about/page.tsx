@@ -40,8 +40,8 @@ export default function AboutPage() {
 
       {/* Story */}
       <section className="bg-cream py-24 lg:py-36">
-        <div className="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
-          <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-8 lg:px-12">
+          <div className="grid gap-10 sm:gap-14 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-6">
               <SectionHeading
                 eyebrow="The Ironwood way"
@@ -65,13 +65,13 @@ export default function AboutPage() {
                 </div>
               </Reveal>
               <Reveal delay={260}>
-                <div className="mt-10 grid grid-cols-2 gap-6 border-t border-line pt-10">
+                <div className="mt-10 grid grid-cols-2 gap-4 border-t border-line pt-10 sm:gap-6">
                   <div>
-                    <p className="display text-4xl text-forest">98%</p>
+                    <p className="display text-3xl text-forest sm:text-4xl">98%</p>
                     <p className="mt-1 text-sm text-ink-soft">Would recommend us</p>
                   </div>
                   <div>
-                    <p className="display text-4xl text-forest">7-yr</p>
+                    <p className="display text-3xl text-forest sm:text-4xl">7-yr</p>
                     <p className="mt-1 text-sm text-ink-soft">Structural warranty</p>
                   </div>
                 </div>
@@ -86,7 +86,7 @@ export default function AboutPage() {
                   rounded="rounded-[2rem]"
                 />
               </Reveal>
-              <div className="anim-floaty-soft absolute -bottom-6 left-8 max-w-xs rounded-2xl bg-forest px-6 py-5 text-cream shadow-2xl">
+              <div className="anim-floaty-soft absolute -bottom-4 left-4 max-w-[16rem] rounded-2xl bg-forest px-5 py-4 text-cream shadow-2xl sm:-bottom-6 sm:left-8 sm:max-w-xs sm:px-6 sm:py-5">
                 <p className="eyebrow text-oat">In-house</p>
                 <p className="mt-1.5 text-sm leading-relaxed text-cream/85">
                   Kitchens, stairs and joinery fabricated in our own workshop.
@@ -99,8 +99,8 @@ export default function AboutPage() {
 
       {/* Mission / Vision */}
       <section className="bg-cream-soft py-24 lg:py-32">
-        <div className="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
-          <div className="grid gap-6 lg:grid-cols-2">
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-8 lg:px-12">
+          <div className="grid gap-5 sm:gap-6 lg:grid-cols-2">
             {[
               {
                 tag: "Mission",
@@ -131,7 +131,7 @@ export default function AboutPage() {
 
       {/* Values */}
       <section className="bg-cream py-24 lg:py-36">
-        <div className="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-8 lg:px-12">
           <SectionHeading
             eyebrow="What we stand for"
             title="Six values we build on"
@@ -147,7 +147,7 @@ export default function AboutPage() {
 
       {/* Team */}
       <section className="bg-cream py-24 lg:py-36">
-        <div className="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-8 lg:px-12">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
               eyebrow="The people"
@@ -163,8 +163,8 @@ export default function AboutPage() {
 
       {/* Timeline */}
       <section className="bg-cream-soft py-24 lg:py-36">
-        <div className="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
-          <div className="grid gap-14 lg:grid-cols-12">
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-8 lg:px-12">
+          <div className="grid gap-10 sm:gap-14 lg:grid-cols-12">
             <div className="lg:col-span-4">
               <SectionHeading
                 eyebrow="Milestones"
@@ -182,7 +182,7 @@ export default function AboutPage() {
 
       {/* Gallery */}
       <section className="bg-cream py-24 lg:py-36">
-        <div className="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-8 lg:px-12">
           <SectionHeading
             eyebrow="Life at Ironwood"
             title="Scenes from the workshop & sites"
@@ -195,21 +195,21 @@ export default function AboutPage() {
 
       {/* Pull quote */}
       <section className="relative overflow-hidden bg-forest text-cream">
-        <div className="mx-auto max-w-4xl px-5 py-24 text-center sm:px-8 lg:py-32">
+        <div className="mx-auto max-w-4xl px-4 py-24 text-center sm:px-8 lg:py-32">
           <Reveal>
-            <p className="display text-4xl leading-tight sm:text-5xl lg:text-6xl">
+            <p className="display text-3xl leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
               “{quote.quote}”
             </p>
           </Reveal>
           <Reveal delay={150}>
-            <div className="mt-8 flex items-center justify-center gap-4">
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <img
                 src={quote.image}
                 alt={quote.name}
                 loading="lazy"
                 className="h-12 w-12 rounded-full object-cover ring-2 ring-cream/20"
               />
-              <div className="text-left">
+              <div className="text-center sm:text-left">
                 <p className="font-semibold">{quote.name}</p>
                 <p className="text-sm text-cream/60">{quote.role} · {quote.location}</p>
               </div>
