@@ -1,0 +1,478 @@
+@import "tailwindcss";
+
+/* ============================================================
+   IRONWOOD — Design System
+   Warm editorial palette · deep forest · timber · copper
+   ============================================================ */
+
+:root {
+  --cream: #f5f0e6;
+  --cream-soft: #ede4d2;
+  --sand: #e6dbc4;
+  --oat: #d8c6a5;
+  --ink: #18221d;
+  --ink-soft: #45534b;
+  --forest: #1d3b30;
+  --forest-deep: #0f241c;
+  --forest-mid: #27493c;
+  --timber: #8a5a38;
+  --copper: #bf7a3f;
+  --copper-deep: #9c5f2e;
+  --gold: #c9a15c;
+  --line: rgba(24, 34, 29, 0.14);
+  --line-strong: rgba(24, 34, 29, 0.26);
+  --on-dark: #f5f0e6;
+  --on-dark-muted: rgba(245, 240, 230, 0.66);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-cream-soft: var(--cream-soft);
+  --color-sand: var(--sand);
+  --color-oat: var(--oat);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-forest-mid: var(--forest-mid);
+  --color-timber: var(--timber);
+  --color-copper: var(--copper);
+  --color-copper-deep: var(--copper-deep);
+  --color-gold: var(--gold);
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
+/* ---------- Base ---------- */
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--copper);
+  color: var(--cream);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 11px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream-soft);
+}
+::-webkit-scrollbar-thumb {
+  background: #b9ab90;
+  border-radius: 8px;
+  border: 2px solid var(--cream-soft);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--timber);
+}
+
+/* Visible, elegant focus */
+:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Typography helpers ---------- */
+.display {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 480;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+.eyebrow {
+  font-family: var(--font-manrope), sans-serif;
+  font-weight: 650;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* ---------- Ambient keyframes ---------- */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--r, 0deg));
+  }
+  50% {
+    transform: translateY(-14px) rotate(var(--r, 0deg));
+  }
+}
+@keyframes floaty-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes gradient-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+@keyframes scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+@keyframes grain-shift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-3%, -2%);
+  }
+  20% {
+    transform: translate(2%, 3%);
+  }
+  30% {
+    transform: translate(-2%, 1%);
+  }
+  40% {
+    transform: translate(3%, -3%);
+  }
+  50% {
+    transform: translate(-1%, 2%);
+  }
+  60% {
+    transform: translate(2%, -1%);
+  }
+  70% {
+    transform: translate(-3%, -3%);
+  }
+  80% {
+    transform: translate(1%, 3%);
+  }
+  90% {
+    transform: translate(-2%, -1%);
+  }
+}
+@keyframes ticker-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 80px 0;
+  }
+}
+@keyframes hero-kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+
+.anim-marquee {
+  animation: marquee var(--marquee-duration, 30s) linear infinite;
+}
+.anim-floaty {
+  animation: floaty var(--float-duration, 7s) ease-in-out infinite;
+}
+.anim-floaty-soft {
+  animation: floaty-soft 6s ease-in-out infinite;
+}
+.anim-spin-slow {
+  animation: spin-slow 22s linear infinite;
+}
+.anim-gradient {
+  background-size: 200% 200%;
+  animation: gradient-pan 9s ease infinite;
+}
+.anim-scroll-dot {
+  animation: scroll-dot 1.9s var(--ease-out-quart) infinite;
+}
+
+/* Grain / noise overlay */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: -100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  animation: grain-shift 0.9s steps(4) infinite;
+  pointer-events: none;
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--copper) 0%,
+    var(--gold) 45%,
+    var(--oat) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-gradient-dark {
+  background: linear-gradient(100deg, #ffffff 0%, var(--oat) 60%, var(--copper) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Scroll reveal primitives (state-driven) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  filter: blur(6px);
+  transition:
+    opacity 1s var(--ease-out-expo),
+    transform 1s var(--ease-out-expo),
+    filter 1s var(--ease-out-expo);
+  will-change: opacity, transform, filter;
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+.reveal[data-dir="left"] {
+  transform: translateX(-56px);
+}
+.reveal[data-dir="right"] {
+  transform: translateX(56px);
+}
+.reveal[data-dir="left"].is-in,
+.reveal[data-dir="right"].is-in {
+  transform: translateX(0);
+}
+.reveal[data-scale="true"] {
+  transform: translateY(24px) scale(0.94);
+}
+.reveal[data-scale="true"].is-in {
+  transform: translateY(0) scale(1);
+}
+
+/* Split text */
+.split-line {
+  display: block;
+  overflow: hidden;
+}
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+.split-inner {
+  display: inline-block;
+  transform: translateY(112%);
+  transition: transform 1.1s var(--ease-out-expo);
+  will-change: transform;
+}
+.is-in .split-inner,
+.split-inner.is-in {
+  transform: translateY(0);
+}
+
+/* Image reveal (clip-path mask) */
+.img-reveal {
+  overflow: hidden;
+}
+.img-reveal > img {
+  transform: scale(1.28);
+  filter: saturate(0.92);
+  transition:
+    transform 1.4s var(--ease-out-expo),
+    filter 1.4s var(--ease-out-expo);
+  will-change: transform;
+}
+.img-reveal.is-in > img {
+  transform: scale(1.02);
+  filter: saturate(1);
+}
+
+/* ---------- Marquee ---------- */
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+
+/* ---------- Buttons ---------- */
+.btn-magnetic {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.45s var(--ease-out-quart);
+}
+.btn-magnetic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translateY(101%);
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.btn-magnetic:hover::after {
+  transform: translateY(0);
+}
+
+/* Underline nav link */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 1.5px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.nav-link:hover::after,
+.nav-link[data-active="true"]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Card tilt helper (JS sets CSS vars) */
+.tilt-card {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transform-style: preserve-3d;
+  transition: transform 0.18s ease-out;
+}
+
+/* Hero light beam */
+.light-beam {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(201, 161, 92, 0.5) 0%,
+    rgba(191, 122, 63, 0.18) 40%,
+    transparent 70%
+  );
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal,
+  .reveal[data-dir="left"],
+  .reveal[data-dir="right"],
+  .reveal[data-scale="true"] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  .split-inner {
+    transform: none;
+  }
+  .img-reveal > img {
+    transform: none;
+  }
+}
+
+/* ---------- Utilities ---------- */
+.mask-fade-x {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (pointer: fine) {
+  .cursor-hidden-native,
+  .cursor-hidden-native * {
+    cursor: none;
+  }
+}
