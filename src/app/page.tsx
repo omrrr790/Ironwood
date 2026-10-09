@@ -32,7 +32,7 @@ export default function Home() {
       <ServicesHome />
       <Storytelling />
       <Showcase />
-      <StatsBand tone="light" />
+      <StatsBand tone="dark" />
       <ProjectsHome />
       <Testimonials />
       <ProcessSection />
